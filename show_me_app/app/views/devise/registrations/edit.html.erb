@@ -12,6 +12,25 @@
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
+ <!--  Edit user name -->
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, placeholder: 'name' %>
+    </div>
+
+  <!--  Edit user role -->
+  <div class="field">
+    <%= f.label :role %><br />
+    <%= f.text_field :role, autofocus: true %>
+  </div>
+
+  <!--  Edit user year -->
+   <div class="field">
+    <%= f.label :year %><br />
+    <%= f.text_field :year, autofocus: true %>
+  </div>
+
+
   <div class="field">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
