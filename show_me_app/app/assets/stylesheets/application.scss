@@ -24,6 +24,17 @@ body {
 	margin-bottom: 10px;
 }
 
+.watermark {
+	opacity: 0.2;
+	display: inline-block;
+	position: absolute;
+	left: 500px;
+	top: 100px;
+	width: 300px;
+	height: 300px;
+	color: white;
+}
+
 hr {
 	width: 95%;
 }
