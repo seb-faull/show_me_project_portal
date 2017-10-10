@@ -13,6 +13,16 @@
     <%= f.text_field :name, autofocus: true %>
   </div>
 
+   <div class="field">
+    <%= f.label :role %><br />
+    <%= f.text_field :role, autofocus: true %>
+  </div>
+
+   <div class="field">
+    <%= f.label :year %><br />
+    <%= f.text_field :year, autofocus: true %>
+  </div>
+
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
