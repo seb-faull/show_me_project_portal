@@ -1,9 +1,11 @@
 <div class="grid">
-	<p>Title: <strong><%= project.title %></strong></p>
-	<p>Description: <strong><%= project.description %></strong></p>
+	<div class="text">
+		<p>Title: <strong><%= project.title %></strong></p>
+		<p>Description: <strong><%= project.description %></strong></p>
 
-	<br>
-		
-	<%= link_to "Show Page"%> |
-	<%= link_to "Edit Page", edit_project_path(project) %>
+		<br>
+			
+		<%= link_to "Show Page"%> |
+		<%= link_to "Edit Page", edit_project_path(project) %>
+	</div>
 </div>
