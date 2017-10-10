@@ -16,11 +16,13 @@
    <div class="field">
     <%= f.label :role %><br />
     <%= f.text_field :role, autofocus: true %>
+    <%= f.select :role, ['Staff','Spartan','Trainee'], :prompt => 'Select' %>
   </div>
 
    <div class="field">
     <%= f.label :year %><br />
     <%= f.text_field :year, autofocus: true %>
+
   </div>
 
   <div class="field">
