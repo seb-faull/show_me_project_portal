@@ -1,5 +1,7 @@
 class ProjectsController < ApplicationController
 
+  before_action :authenticate_user!
+
   #Index
   def index
     @projects = current_user.projects
