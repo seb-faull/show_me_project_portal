@@ -40,12 +40,13 @@ hr {
 }
 
 .grid {
-	padding-top: 50px;
-	padding-left: 100px;
-	padding-right: 100px;
-	padding-bottom: 50px;
 	display: inline-block;
-	width: 100px;
+	width: 400px;
+	padding: 10px;
 	margin: 10px;
-	border: 2px solid rgba(31, 31, 31, 0.4);;
+	border: 2px solid rgba(31, 31, 31, 0.4);
+}
+
+.text {
+	text-align: left;
 }
