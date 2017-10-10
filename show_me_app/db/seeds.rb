@@ -11,6 +11,9 @@
 # Project.create!(title: "Project 1", description: "This game was built using HTML, CSS and JavaScript. Additional libraries include jQuery and the jQuery Easing Plugin. Through DOM manipulation, the entire project runs from within the index.HTML.",
 # 	live: false, user_id: u1.id)
 
+u1 = User.create!(email: "sks@outlook.com", password: "123456", name: "Bob", year: "2017", role: "Spartan")
+
+
 
 
   # create_table "projects", force: :cascade do |t|
