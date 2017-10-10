@@ -6,9 +6,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   </head>
 
   <body>
+
+    <div class="watermark">
+      <img src="/assets/sparta-global.png">
+    </div>
 
     <p class="navbar-text pull-right">
     <% if user_signed_in? %>

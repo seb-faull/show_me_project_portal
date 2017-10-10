@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	background-color: white;
+	font-family: 'Raleway', sans-serif;
+	color: #34BEEF;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.watermark {
+	opacity: 0.1;
+	display: inline-block;
+	position: absolute;
+	left: 500px;
+	top: 100px;
+	width: 300px;
+	height: 300px;
+	color: white;
+}
+
+hr {
+	width: 95%;
+}
+
+.grid {
+	margin-top: 50px;
+	margin-left: 200px;
+	margin-right: 200px;
+	margin-bottom: 50px;
+	display: inline-block;
+	width: 100px;
+	padding: 10px;
+}
