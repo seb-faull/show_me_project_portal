@@ -25,8 +25,25 @@
     z-index: 3;
     background-color: #01181b;
     color: #fff;
+    display: block;
 }
 
-p {
-	padding: 10px 0;
+.container-header {
+    float: right;
+    margin-top: 30px;
+    margin-right: 20px;
+    width: 100%;
 }
+
+.container-header img {
+    height: 60px;
+    margin-left: 127px;
+}
+
+.container-header p {
+    float: right;
+    margin-top: 26px;
+    margin-right: 70px;
+}
+
+
