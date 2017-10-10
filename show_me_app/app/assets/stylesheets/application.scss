@@ -130,6 +130,7 @@ body {
 .login-block input#password {
     background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
     background-size: 16px 80px;
+    padding: 0 20px 0 50px;
 }
 
 .login-block input#password:focus {
@@ -138,8 +139,24 @@ body {
 }
 
 .login-block input:active, .login-block input:focus {
-    border: 1px solid #ff656c;
+    border: 1px solid #34beef;
 }
 
+.login-block input#submit {
+    width: 100%;
+    height: 40px;
+    background: #34beef;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
 
+.login-block input#submit:hover {
+    background: #5bd4ff;
+}
 
