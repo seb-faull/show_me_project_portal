@@ -32,7 +32,6 @@ body {
 	top: 100px;
 	width: 300px;
 	height: 300px;
-	color: white;
 }
 
 hr {
@@ -47,6 +46,7 @@ hr {
 }
 
 .text {
-	border: solid 2px rgba(31,31,31,0.4);
 	padding: 10px;
+	margin: 10px;
+	border: 2px solid rgba(31, 31, 31, 0.4);
 }
