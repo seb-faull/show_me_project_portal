@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
 
   #Index
   def index
+    @
   end
 
 
@@ -34,5 +35,5 @@ class ProjectsController < ApplicationController
   def destroy
   end
 
-  
+
 end

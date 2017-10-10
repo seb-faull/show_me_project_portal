@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
 
+	devise_for :users
 	resources :projects
 
-	root "projects#index"
-
-	devise_for :users
+	root "static#home"
 
 end
