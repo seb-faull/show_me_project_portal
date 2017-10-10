@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-u1 = User.create!(email: "sks@hotmail.com", password: "123456", name: "Bob", year: "2017", role: "Trainee Spartan")
+# u1 = User.create!(email: "sks@hotmail.com", password: "123456", name: "Bob", year: "2017", role: "Trainee Spartan")
 
-Project.create!(title: "Project 1", description: "This game was built using HTML, CSS and JavaScript. Additional libraries include jQuery and the jQuery Easing Plugin. Through DOM manipulation, the entire project runs from within the index.HTML.",
-	live: false, user_id: u1.id)
+# Project.create!(title: "Project 1", description: "This game was built using HTML, CSS and JavaScript. Additional libraries include jQuery and the jQuery Easing Plugin. Through DOM manipulation, the entire project runs from within the index.HTML.",
+# 	live: false, user_id: u1.id)
 
 
 
