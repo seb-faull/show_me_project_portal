@@ -1,11 +1,10 @@
 <h1>Project Show Page</h1>
-	
-		<%= render @project%>
-
+<!-- Render the projects -->	
+<%= render @project%>
+<br>
+<!-- If there is a user logged in, link to delete and a link to home -->
+<% if current_user.present? %>
+	<%= link_to "Delete", @project, method: :delete, data: { confirm: "Are you sure?" } %>
 	<br>
-
-	<% if current_user.present? %>
-		<%= link_to "Delete", @project, method: :delete, data: { confirm: "Are you sure?" } %>
-		<br>
-		<%= link_to "Home", root_path %>
-	<% end %>
+	<%= link_to "Home", root_path %>
+<% end %>

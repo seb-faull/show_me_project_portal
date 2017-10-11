@@ -1,22 +1,17 @@
+<!-- Homepage - root page -->
 <% if current_page?(root_path) %>
 	<h1>All Projects</h1>
 <% else %>
+<!-- If the current page is not the root, show the My Projects page -->
 	<h1>My Projects</h1>
 <% end %>
 
-	<!-- If User is not signed in don't show these links -->
-	<% if current_user.present? %>
+<!-- If User is not signed in don't show these links -->
+<% if current_user.present? %>
 		<%= link_to "New Project", new_project_path %> |
 		<%= link_to "My Projects", projects_path %> |
 		<%= link_to "Home", '/' %>
-
-	
-	<% end %>
-
-
-	<br>
-
-
-
-	<%= render @projects %>
-
+<% end %>
+<br>
+<!-- Render the projects -->
+<%= render @projects %>
