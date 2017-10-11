@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
     protected
 
-    	# Overides devise user controller to force in role, name and year parameters
+    	#Overides devise user controller to force in role, name and year parameters
         def configure_permitted_parameters
         	
             devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :role, :year, :password])
