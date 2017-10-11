@@ -1,0 +1,17 @@
+
+<div class="grid">
+	<div class="text">
+		<p>Title: <strong><%= project.title %></strong></p>
+		<p>Description: <strong><%= project.description %></strong></p>
+
+		<br>
+
+			  <%= link_to "Show Page", project_path(project)%>
+			  <%= link_to "Home", root_path %>
+				<!-- Only show edit link to the current user's project -->
+			| <%= link_to "Edit Page", edit_project_path(project) %>
+				
+	</div>
+</div>
+
+
