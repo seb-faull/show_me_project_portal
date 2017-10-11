@@ -1,28 +1,32 @@
-<div class="grid">
-	<div class="text">
-		<p>Title: <strong><%= project.title %></strong></p>
-		<p>Description: <strong><%= project.description %></strong></p>
+<% if project.live == true %>
+	<div class="grid">
+		<div class="text">
+			<p>Title: <strong><%= project.title %></strong></p>
+			<p>Description: <strong><%= project.description %></strong></p>
 
-		<br>
+			<br>
 
-		<% if current_page?(root_path) %>
-			<%= link_to "Show Page", project_path(project)%>
-		<% end %>
 
-		<% unless current_page?(root_path) %>
-		  <%= link_to "Home", root_path %>
-		<% end %>
+				<% if current_page?(root_path) %>
+					<%= link_to "Show Page", project_path(project)%>
+				<% end %>
 
-		
-		<% if current_user.present? %>
-			<!-- Only show edit link to the current user's project -->
-			<% if current_user.id == project.user_id %>
-				| <%= link_to "Edit Page", edit_project_path(project) %>
-			<% end %>
-		<% end %>
+				<% unless current_page?(root_path) %>
+				  <%= link_to "Home", root_path %>
+				<% end %>
 
-		
+				
+				<% if current_user.present? %>
+					<!-- Only show edit link to the current user's project -->
+					<% if current_user.id == project.user_id %>
+						| <%= link_to "Edit Page", edit_project_path(project) %>
+					<% end %>
+				<% end %>
 
-		
+			
+			
+			
+		</div>
 	</div>
-</div>
+
+<% end %>
