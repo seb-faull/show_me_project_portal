@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
     protected
 
+    	# Overrides user controller and allows the new parameters
         def configure_permitted_parameters
         	
             devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email, :role, :year, :password])
