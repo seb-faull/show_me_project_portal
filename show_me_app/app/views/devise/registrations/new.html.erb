@@ -5,50 +5,53 @@
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
-    <!-- Email Field -->
+    <!-- Email Text Field -->
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, :id => "email" %>
     </div>
 
-    <!-- Password Field -->
+    <!-- Password Text Field -->
     <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %>
+      <br/>
       <%= f.password_field :password, autocomplete: "off", :id => "password" %>
     </div>
 
-  <!-- Password Confirmation Field -->
+  <!-- Password Confirmation Text Field -->
     <div class="field">
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off", :id => "password" %>
     </div>
 
-    <!-- Name Field -->
+    <!-- Name Text Field -->
     <div class="field">
       <%= f.label :name %><br />
       <%= f.text_field :name, autofocus: true %>
     </div>
 
     <!-- Role Selecter -->
-     <div class="field">
+    <div class="field">
       <%= f.label :role %>
       <%= f.select :role, ['Staff','Spartan','Trainee'], :prompt => 'Select' %>
     </div>
 
-     <div class="field">
+    <!-- Year Text Field -->
+    <div class="field">
       <%= f.label :year %><br />
       <%= f.text_field :year, autofocus: true %>
-
     </div>
 
+    <!-- Sign Up Button & Submit form -->
     <div class="actions">
       <%= f.submit "Sign up", :id => "submit" %>
     </div>
   <% end %>
 
   <%= render "devise/shared/links" %>
+  
 </div>
 
