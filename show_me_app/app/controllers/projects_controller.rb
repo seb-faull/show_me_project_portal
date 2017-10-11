@@ -3,11 +3,13 @@ class ProjectsController < ApplicationController
   #Index
   def index
     @projects = current_user.projects
+    @users = User.all
   end
 
   #Show
   def show
     @project = Project.find(params[:id])
+    @users = User.all
   end
 
   #New

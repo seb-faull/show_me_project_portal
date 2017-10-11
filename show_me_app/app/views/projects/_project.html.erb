@@ -7,6 +7,7 @@
 			<div class="text">
 				<p>Title: <strong><%= project.title %></strong></p>
 				<p>Description: <strong><%= project.description %></strong></p>
+				<p>User: <strong><%= @users.find(project.user_id).name %></strong></p>
 				<br>
 				<% if current_page?(root_path) %>
 					<%= link_to "Show Page", project_path(project)%>
@@ -38,10 +39,14 @@
 
 <!-- If any User is NOT signed in and if projects are live then render all projects -->
 <% elsif !current_user.present? && (project.live == true) %>
+	
+
 	<div class="grid">
 		<div class="text">
 			<p>Title: <strong><%= project.title %></strong></p>
 			<p>Description: <strong><%= project.description %></strong></p>
+			<p>User: <strong><%= @users.find(project.user_id).name %></strong></p>
+
 			<br>
 			<% if current_page?(root_path) %>
 				<%= link_to "Show Page", project_path(project)%>
