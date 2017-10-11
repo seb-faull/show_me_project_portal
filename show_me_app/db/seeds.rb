@@ -14,6 +14,8 @@
 u1 = User.create!(email: "sks@outlook.com", password: "123456", name: "Bob", year: "2017", role: "Spartan")
 u2 = User.create!(email: "ea@hotmail.com", password: "123456", name: "John", year: "2015", role: "Trainer")
 
+admin = User.create!(email: "admin@hotmail.com", password: "123456", name: "admin", year: "2017", role: "Admin")
+
 Project.create!(title: "Project 1", description: "Game built with HTML/CSS, JavaScript and jQuery", live: false, user_id: u1.id)
 Project.create!(title: "Project 2", description: "Web Application built with Ruby on Rails ", live: false, user_id: u2.id)
 
