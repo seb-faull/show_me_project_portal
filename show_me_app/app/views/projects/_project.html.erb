@@ -1,3 +1,4 @@
+<!-- Checks to see if a User is present and if it is, then checks to see if they're an admin and if projects are live -->
 <% if current_user.present? %>
 	<% if (current_user.role == "Admin") || (project.live == true) || (current_page?(projects_path)) %> <!-- will be true -->
 
@@ -8,40 +9,55 @@
 
 				<br>
 
-					<% if current_page?(root_path) %>
-						<%= link_to "Show Page", project_path(project)%>
+				<% if current_page?(root_path) %>
+					<%= link_to "Show Page", project_path(project)%>
+				<% end %>
+
+				<% unless current_page?(root_path) %>
+				  <%= link_to "Home", root_path %>
+				<% end %>
+
+				
+				<% if current_user.present? %>
+					<!-- Only show edit link to the current user's project -->
+					<% if current_user.id == project.user_id %>
+						| <%= link_to "Edit Page", edit_project_path(project) %>
 					<% end %>
 
-					<% unless current_page?(root_path) %>
-					  <%= link_to "Home", root_path %>
-					<% end %>
+					<!--- If user is admin -->
+					<% if current_user.role == "Admin" %>
+						<%= form_for(project) do |f| %>
 
+							<%= f.label "Live" %>
+					    
+					    	<%= f.check_box(:live) %>
 					
-					<% if current_user.present? %>
-						<!-- Only show edit link to the current user's project -->
-						<% if current_user.id == project.user_id %>
-							| <%= link_to "Edit Page", edit_project_path(project) %>
+					   		<%= f.submit "Submit" %>
 						<% end %>
-
-						<!--- If user is admin -->
-						<% if current_user.role == "Admin" %>
-							<%= form_for(project) do |f| %>
-
-								<%= f.label "Live" %>
-						    
-						    	<%= f.check_box(:live) %>
-
-						
-						   		<%= f.submit "Submit" %>
-						   		
-
-							<% end %>
-      						
-						<% end %>	
+  						
 					<% end %>	
-
+				<% end %>	
 			</div>
 		</div>
-
 	<% end %>
+
+<!-- If any User is NOT signed in and if projects are live then render all projects -->
+<% elsif !current_user.present? && (project.live == true) %>
+	<div class="grid">
+		<div class="text">
+			<p>Title: <strong><%= project.title %></strong></p>
+			<p>Description: <strong><%= project.description %></strong></p>
+
+			<br>
+
+			<% if current_page?(root_path) %>
+				<%= link_to "Show Page", project_path(project)%>
+			<% end %>
+
+			<% unless current_page?(root_path) %>
+			  <%= link_to "Home", root_path %>
+			<% end %>
+
+		</div>
+	</div>
 <% end %>
