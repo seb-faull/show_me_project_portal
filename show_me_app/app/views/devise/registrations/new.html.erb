@@ -1,14 +1,17 @@
+<!-- Sign Up / Registration form -->
 <div class="login-block">
   <h2>Sign up</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
+    <!-- Email Field -->
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, :id => "email" %>
     </div>
 
+    <!-- Password Field -->
     <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
@@ -17,16 +20,19 @@
       <%= f.password_field :password, autocomplete: "off", :id => "password" %>
     </div>
 
+  <!-- Password Confirmation Field -->
     <div class="field">
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: "off", :id => "password" %>
     </div>
 
+    <!-- Name Field -->
     <div class="field">
       <%= f.label :name %><br />
       <%= f.text_field :name, autofocus: true %>
     </div>
 
+    <!-- Role Selecter -->
      <div class="field">
       <%= f.label :role %>
       <%= f.select :role, ['Staff','Spartan','Trainee'], :prompt => 'Select' %>
