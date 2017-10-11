@@ -5,7 +5,11 @@
 
 		<br>
 			
-		<%= link_to "Show Page", project_path(project)%> |
-		<%= link_to "Edit Page", edit_project_path(project) %>
+		<% if current_user.present? %>
+			<%= link_to "Show Page", project_path(project)%> |
+			<%= link_to "Edit Page", edit_project_path(project) %>
+		<% end %>
+
+		
 	</div>
 </div>
