@@ -1,5 +1,5 @@
-
-<% if project.live == false || current_page?(projects_path) %> <!-- will be true -->
+<% if current_user.present? %>
+	<% if (current_user.role == "Admin") || (project.live == true) || (current_page?(projects_path)) %> <!-- will be true -->
 
 		<div class="grid">
 			<div class="text">
@@ -29,10 +29,11 @@
 
 								<%= f.label "Live" %>
 						    
-						    	<%= check_box 'object', 'boolean_attribute', {}, 'true', 'false' %>
+						    	<%= f.check_box(:live) %>
 
+						
 						   		<%= f.submit "Sumbit" %>
-						   	
+						   		
 
 							<% end %>
       						
@@ -42,4 +43,5 @@
 			</div>
 		</div>
 
+	<% end %>
 <% end %>
