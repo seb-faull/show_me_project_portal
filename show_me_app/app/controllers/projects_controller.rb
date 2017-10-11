@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   #Index
   def index
@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
 
   #Show
   def show
-    @project = current_user.projects.find(params[:id])
+    @project = Project.find(params[:id])
   end
 
 
