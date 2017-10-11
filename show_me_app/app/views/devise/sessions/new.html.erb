@@ -1,21 +1,25 @@
+<!-- Log In Form -->
 <div class="login-block-for-login">
   <h2>Log in</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+    <!-- Email Text Field -->
     <div class="field">
-      <%= f.label :email %><br />
+      <%= f.label :email %> <br/>
       <%= f.email_field :email, autofocus: true, autocomplete: "off", :id => "email" %>
     </div>
 
+    <!-- Password Text Field -->
     <div class="field">
-      <%= f.label :password %><br />
+      <%= f.label :password %> <br/>
       <%= f.password_field :password, autocomplete: "off", :id => "password" %>
     </div>
 
+    <!-- Log In Button & Submit Form -->
     <div class="actions">
       <%= f.submit "Log in", :id => "submit" %>
     </div>
   <% end %>
-
   <%= render "devise/shared/links" %>
 </div>
