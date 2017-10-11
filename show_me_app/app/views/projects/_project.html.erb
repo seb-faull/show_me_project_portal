@@ -4,15 +4,25 @@
 		<p>Description: <strong><%= project.description %></strong></p>
 
 		<br>
-			
+
+		<%= link_to "Show Page", project_path(project)%>
+
+		<!-- If User is not signed in show link to Home -->
+		<% if not current_user.present? %>
+			| <%= link_to "Home", root_path %>
+		<% end %>
+
+		
+		<!-- If User is signed in show link to Edit Page -->
 		<% if current_user.present? %>
-			<%= link_to "Show Page", project_path(project)%>
+			| <%= link_to "Show Page", project_path(project)%>
 
 			<% if current_user.id == project.user_id %>
-			<%= link_to "Edit Page", edit_project_path(project) %>
+			  | <%= link_to "Edit Page", edit_project_path(project) %>
 
 			<% end %>
 			
+
 		<% end %>
 
 		
