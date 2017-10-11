@@ -36,7 +36,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem "devise"
 gem 'aws-sdk', '~> 1.5.7' # amazon web services gem
-gem 'paperclip' 
+gem 'paperclip'
+gem "cancan" 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

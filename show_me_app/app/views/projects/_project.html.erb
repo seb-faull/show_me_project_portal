@@ -28,9 +28,11 @@
 							<%= form_for(project) do |f| %>
 
 								<%= f.label "Live" %>
-						    	<%= check_box_tag 'live_id', 'yes' %>
+						    
+						    	<%= check_box 'object', 'boolean_attribute', {}, 'true', 'false' %>
 
 						   		<%= f.submit "Sumbit" %>
+						   	
 
 							<% end %>
       						
