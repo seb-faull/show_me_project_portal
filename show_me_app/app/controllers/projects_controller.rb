@@ -32,14 +32,23 @@ class ProjectsController < ApplicationController
   #Edit
   def edit
     @project = current_user.projects.find(params[:id])
+
   end
 
 
   #Update
   def update
-    project = current_user.projects.find(params[:id])
-    project.update(project_params)
 
+    if current_user.role == "Admin"
+      project = Project.find(params[:id])
+      project.update(project_params)
+
+
+    else 
+      project = current_user.projects.find(params[:id])
+      project.update(project_params)
+
+    end
     redirect_to project
   end
 

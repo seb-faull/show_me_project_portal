@@ -1,28 +1,47 @@
-<div class="grid">
-	<div class="text">
-		<p>Title: <strong><%= project.title %></strong></p>
-		<p>Description: <strong><%= project.description %></strong></p>
+<% if current_user.present? %>
+	<% if (current_user.role == "Admin") || (project.live == true) || (current_page?(projects_path)) %> <!-- will be true -->
 
-		<br>
+		<div class="grid">
+			<div class="text">
+				<p>Title: <strong><%= project.title %></strong></p>
+				<p>Description: <strong><%= project.description %></strong></p>
 
-		<% if current_page?(root_path) %>
-			<%= link_to "Show Page", project_path(project)%>
-		<% end %>
+				<br>
 
-		<% unless current_page?(root_path) %>
-		  <%= link_to "Home", root_path %>
-		<% end %>
+					<% if current_page?(root_path) %>
+						<%= link_to "Show Page", project_path(project)%>
+					<% end %>
 
-		
-		<% if current_user.present? %>
-			<!-- Only show edit link to the current user's project -->
-			<% if current_user.id == project.user_id %>
-				| <%= link_to "Edit Page", edit_project_path(project) %>
-			<% end %>
-		<% end %>
+					<% unless current_page?(root_path) %>
+					  <%= link_to "Home", root_path %>
+					<% end %>
 
-		
+					
+					<% if current_user.present? %>
+						<!-- Only show edit link to the current user's project -->
+						<% if current_user.id == project.user_id %>
+							| <%= link_to "Edit Page", edit_project_path(project) %>
+						<% end %>
 
-		
-	</div>
-</div>
+						<!--- If user is admin -->
+						<% if current_user.role == "Admin" %>
+							<%= form_for(project) do |f| %>
+
+								<%= f.label "Live" %>
+						    
+						    	<%= f.check_box(:live) %>
+
+						
+						   		<%= f.submit "Sumbit" %>
+						   		
+
+							<% end %>
+      						
+						<% end %>	
+					<% end %>	
+
+			</div>
+		</div>
+
+	<% end %>
+<% end %>
