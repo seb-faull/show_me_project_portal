@@ -7,7 +7,9 @@
 			<div class="text">
 				<p>Title: <strong><%= project.title %></strong></p>
 				<p>Description: <strong><%= project.description %></strong></p>
-				<p>User: <strong><%= @users.find(project.user_id).name %></strong></p>
+
+				<p>User: <strong><%= @users.find(project.user_id).name %></strong></p> <!-- Finds user by project user id -->
+
 				<br>
 				<% if current_page?(root_path) %>
 					<%= link_to "Show Page", project_path(project)%>
@@ -43,7 +45,8 @@
 		<div class="text">
 			<p>Title: <strong><%= project.title %></strong></p>
 			<p>Description: <strong><%= project.description %></strong></p>
-			<p>User: <strong><%= @users.find(project.user_id).name %></strong></p>
+
+			<p>User: <strong><%= @users.find(project.user_id).name %></strong></p> <!-- Finds user by project user id -->
 
 			<br>
 			<% if current_page?(root_path) %>
