@@ -22,7 +22,11 @@
 						<% if current_user.id == project.user_id %>
 							| <%= link_to "Edit Page", edit_project_path(project) %>
 						<% end %>
-					<% end %>		
+					<% end %>	
+
+					<% if current_user.role == "Admin" %>
+						<p>LIVE</p>
+					<% end %>	
 			</div>
 		</div>
 
