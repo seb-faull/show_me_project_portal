@@ -39,8 +39,6 @@
 
 <!-- If any User is NOT signed in and if projects are live then render all projects -->
 <% elsif !current_user.present? && (project.live == true) %>
-	
-
 	<div class="grid">
 		<div class="text">
 			<p>Title: <strong><%= project.title %></strong></p>
