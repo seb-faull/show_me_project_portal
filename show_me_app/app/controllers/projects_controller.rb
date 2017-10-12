@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   def index
     @projects = current_user.projects
 
-    @users = User.all
+    @users = User.all #Line changed
   end
 
   #Show
