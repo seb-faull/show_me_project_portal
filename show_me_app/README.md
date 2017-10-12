@@ -1,7 +1,12 @@
-# README
+## Show Case  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a web application that allows members of the Sparta Global Organisation to upload and view projects they have worked on. Members can make an account, and are then able to create, read, update and delete their projects, and view projects created by other Spartan members. 
+
+## Getting Started  
+
+* Clone the git repo
+* Bundle install required gems
+* ``` rails s``` 
 
 Things you may want to cover:
 
