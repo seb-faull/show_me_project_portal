@@ -19,7 +19,7 @@ admin = User.create!(email: "admin@hotmail.com", password: "123456", name: "admi
 Project.create!(title: "Project 1", description: "Game built with HTML/CSS, JavaScript and jQuery", live: false, user_id: u1.id)
 Project.create!(title: "Project 2", description: "Web Application built with Ruby on Rails ", live: false, user_id: u2.id)
 
-
+puts "Finished seeding..."
 
   # create_table "projects", force: :cascade do |t|
   #   t.string "title"

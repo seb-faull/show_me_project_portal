@@ -3,11 +3,15 @@ class ProjectsController < ApplicationController
   #Index
   def index
     @projects = current_user.projects
+
+    @users = User.all #Line changed
   end
 
   #Show
   def show
     @project = Project.find(params[:id])
+    
+    @users = User.all #Line changed
   end
 
   #New
@@ -44,7 +48,14 @@ class ProjectsController < ApplicationController
 
   #Destroy
   def destroy
-    current_user.projects.destroy(params[:id])
+    if current_user.role == "Admin"
+      Project.destroy(params[:id])
+
+    else 
+      current_user.projects.destroy(params[:id])
+
+    end
+    
     redirect_to projects_url
   end
 
