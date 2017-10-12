@@ -1,62 +1,72 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<!-- Edit Account -->
+<div class="login-block" style="overflow:scroll; height:585px;">
+  <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
- <!--  Edit user name -->
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, placeholder: 'name' %>
+    <!-- Edit Email Text Field -->
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, :id => "email" %>
     </div>
 
-  <!--  Edit user role -->
-  <div class="field">
-    <%= f.label :role %><br />
-    <%= f.select :role, ['Staff','Spartan','Trainee'], :prompt => 'Select' %>
-  </div>
+    <!-- Edit Password Text Field -->
+    <div class="field">
+      <%= f.label :password %> <br />
+      <%= f.password_field :password, autocomplete: "off", :id => "password" %>
+      <% if @minimum_password_length %>
+        <br />
+        <em><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
 
-  <!--  Edit user year -->
-   <div class="field">
-    <%= f.label :year %><br />
-    <%= f.text_field :year, autofocus: true %>
-  </div>
+    <!-- Password Confirmation Text Field -->
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", :id => "password" %>
+    </div>
 
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+   <!-- Edit Name Text Field -->
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, autofocus: true, placeholder: 'name' %>
+      </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+    <!-- Edit User Role Selector -->
+    <div class="field">
+      <%= f.label :role %><br />
+      <%= f.select :role, ['Staff','Spartan','Trainee'], :prompt => 'Select' %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+    <!-- Edit Year Text Field -->
+     <div class="field">
+      <%= f.label :year %><br />
+      <%= f.text_field :year, autofocus: true %>
+    </div>
 
-<h3>Cancel my account</h3>
+    <!-- Current Password Text Field -->
+    <div class="field">
+      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.password_field :current_password, autocomplete: "off" %>
+    </div>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <!-- Update Button & Submit Form -->
+    <div class="actions">
+      <%= f.submit "Update", :id => "submit" %>
+    </div>
+  <% end %>
 
-<%= link_to "Back", :back %>
+  <!-- Cancel account header -->
+  <h3>Cancel my account</h3>
+
+  <!-- Alert message asking if you're sure to cancel your account -->
+  <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :id => "submit" %>
+
+  <!-- Back Button -->
+  <%= link_to "Back", :back %>
+</div>

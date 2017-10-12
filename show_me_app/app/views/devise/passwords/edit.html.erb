@@ -1,9 +1,12 @@
+<!-- Change User's Password -->
 <h2>Change your password</h2>
+
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
   <%= f.hidden_field :reset_password_token %>
 
+  <!-- New Password Text Field With Minimum Characters Length  -->
   <div class="field">
     <%= f.label :password, "New password" %><br />
     <% if @minimum_password_length %>
@@ -12,11 +15,13 @@
     <%= f.password_field :password, autofocus: true, autocomplete: "off" %>
   </div>
 
+  <!-- New Passwor Confirmation Text Field -->
   <div class="field">
     <%= f.label :password_confirmation, "Confirm new password" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+  <!-- Change Password Button & Submit Form -->
   <div class="actions">
     <%= f.submit "Change my password" %>
   </div>
