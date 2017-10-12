@@ -252,3 +252,9 @@ body {
 #text-center {
     text-align: center;
 }
+
+#resize-texfield { 
+    resize: vertical;
+    width: 274px;
+    max-height: 75px;
+}
