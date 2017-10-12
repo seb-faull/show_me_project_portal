@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     
-    @users = User.all
+    @users = User.all #Line changed
   end
 
   #New
