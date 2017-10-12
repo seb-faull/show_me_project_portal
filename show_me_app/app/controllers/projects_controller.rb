@@ -48,7 +48,14 @@ class ProjectsController < ApplicationController
 
   #Destroy
   def destroy
-    current_user.projects.destroy(params[:id])
+    if current_user.role == "Admin"
+      Project.destroy(params[:id])
+
+    else 
+      current_user.projects.destroy(params[:id])
+
+    end
+    
     redirect_to projects_url
   end
 

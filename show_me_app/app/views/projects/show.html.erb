@@ -3,8 +3,11 @@
 <%= render @project%>
 <br>
 <!-- If there is a user logged in, link to delete and a link to home -->
-<% if current_user.present? %>
+<% if current_user.present? && current_user.id == @project.user_id || current_user.role == "Admin" %>
 	<%= link_to "Delete", @project, method: :delete, data: { confirm: "Are you sure?" } %>
 	<br>
 	<%= link_to "Home", root_path %>
-<% end %>
+
+<% else %>
+
+ <% end %>
