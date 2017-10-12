@@ -1,12 +1,13 @@
-<div class="container">
-	<div class="row">
-		<div class="col">
+
+		<!-- <div class="col"> -->
 			<!-- Checks to see if a User is present and if it is, then checks to see if they're an admin and if projects are live -->
 			<% if current_user.present? %>
 				<% if (current_user.role == "Admin") || (project.live == true) || (current_page?(projects_path)) %> <!-- will be true -->
 
 					<!-- Rendering the project and relevant buttons and links -->
-					<div class="col-sm-12 col-md-6 col-lg-6 col-xl-4">
+					<!-- <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4"> -->
+					<div class="col-md-3 col-sm-6">
+						testing
 						<div class="text">
 							<p>Title: <strong><%= project.title %></strong></p>
 							<p>Description: <strong><%= project.description %></strong></p>
@@ -62,6 +63,3 @@
 					</div>
 				</div>
 			<% end %>
-		</div>
-	</div>
-</div>
