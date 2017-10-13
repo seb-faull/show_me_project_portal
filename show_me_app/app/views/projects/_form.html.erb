@@ -1,5 +1,5 @@
 <!-- Form for the project resource - used for creating and updating projects-->
-<%= form_for(@project) do |f| %>
+<%= form_for(@project, multipart: true)) do |f| %>
 
 	<%= f.label :title %>
   <%= f.text_field :title %>
@@ -10,5 +10,15 @@
   <%= f.label :collabarators %>
   <%= f.text_field :collabarators %>
 
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
   <%= f.submit :id => "submit" %>
 <% end %>
+
