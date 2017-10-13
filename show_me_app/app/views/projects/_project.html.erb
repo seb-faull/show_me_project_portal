@@ -23,8 +23,11 @@
 				  <%= link_to "Home", root_path %>
 				  <!-- goes ehre -->
 				  <div id="tag-container">
-				  	<p>CSS: <%= @tags.find(project.id).css %> </p>
-				  	<p>HTML: <%= @tags.find(project.id).html %> </p>
+
+				  	<%= form_for(project) do |f| %>
+							<%= f.label "CSS" %>
+					    <%= f.check_box(:css) %>
+						<% end %>	
 
 				  	
 				  </div>
