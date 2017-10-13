@@ -1,15 +1,5 @@
 Rails.application.configure do
 
-
-  config.paperclip_defaults = {
-  storage: :s3,
-  s3_credentials: {
-    bucket: ENV.fetch('show-case'),
-    access_key_id: ENV.fetch('AWSAccessKeyId=AKIAIODROLQJHGYXZSRQ'),
-    secret_access_key: ENV.fetch('AWSSecretKey=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'),
-    s3_region: ENV.fetch('EU (London)'),
-  }
-  }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
