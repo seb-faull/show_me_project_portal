@@ -60,7 +60,7 @@ class ProjectsController < ApplicationController
 
   protected
   def project_params
-    params.require(:project).permit(:title, :description, :live, :collabarators, :image, :css, :html)
+    params.require(:project).permit(:title, :description, :live, :collabarators, :image, :css, :html, :javascript, :ruby, :rails)
   end
 
 end
