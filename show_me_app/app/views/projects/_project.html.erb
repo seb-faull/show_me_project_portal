@@ -1,5 +1,6 @@
 <!-- Checks to see if a User is present and if it is, then checks to see if they're an admin and if projects are live -->
 <% if current_user.present? %>
+
 	<% if (current_user.role == "Admin") || (project.live == true) || (current_page?(projects_path)) %> <!-- will be true -->
 
 		<!-- Rendering the project and relevant buttons and links -->
@@ -20,6 +21,7 @@
 				<% end %>
 
 				<% unless current_page?(root_path) %>
+				
 				  <%= link_to "Home", root_path %>
 				  <!-- goes ehre -->
 				  <div id="tag-container">

@@ -1,7 +1,12 @@
 <h1>Project Show Page</h1>
+
+<% if @project.live == false %>
+	<p><strong> The project is not live, awaiting admin approval <strong></p>
+<% end %>
 <!-- Render the projects -->	
 <%= render @project%>
 <br>
+
 
 <!-- If there is a user logged in and is the same user or admin, link to delete and a link to home -->
 <% if current_user.present? %>
