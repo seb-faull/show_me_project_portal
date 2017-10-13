@@ -15,6 +15,35 @@
 	    <%= f.file_field :image %>
 	  </div>
 
+	  <ul id="tag-list">
+
+	  		<li class="tag-item">
+					<%= f.label "CSS" %>
+			    <%= f.check_box(:css) %>
+		    </li>
+
+		    <li class="tag-item">
+		    <%= f.label "HTML" %>
+		    <%= f.check_box(:html) %>
+		    </li>
+
+		    <li class="tag-item">
+		    <%= f.label "JavaScript" %>
+		    <%= f.check_box(:javascript) %>
+		    </li>
+
+		    <li class="tag-item">
+		    <%= f.label "Ruby" %>
+		    <%= f.check_box(:ruby) %>
+		    </li>
+
+		    <li class="tag-item">
+		    <%= f.label "Rails" %>
+		    <%= f.check_box(:rails) %>
+		    </li>
+
+		</ul>
+
 	  <%= f.submit :id => "submit" %>
   <% end %>
 
