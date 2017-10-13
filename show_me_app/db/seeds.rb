@@ -19,9 +19,7 @@ admin = User.create!(email: "admin@hotmail.com", password: "123456", name: "admi
 p1 = Project.create!(title: "Project 1", description: "Game built with HTML/CSS, JavaScript and jQuery", live: false, collabarators: "Steve, Jimmy, Bob", user_id: u1.id)
 Project.create!(title: "Project 2", description: "Web Application built with Ruby on Rails ", live: false, collabarators: "Roger, Alan", user_id: u2.id)
 
-t1 = Tag.create!(html: true, css: false, javascript: false, jquery: false, bootstrap: false, ruby: false, rails: false, sql:false, php: false, python: false, csharp: false, java: false)
-
-ProjectTag.create!(project_id: p1.id, tag_id: t1.id)
+t1 = Tag.create!(html: true, css: false, javascript: false, jquery: false, bootstrap: false, ruby: false, rails: false, sql:false, php: false, python: false, csharp: false, java: false, project_id: p1.id)
 
 puts "Finished seeding..."
 

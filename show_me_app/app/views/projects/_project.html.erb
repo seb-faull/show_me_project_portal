@@ -21,6 +21,13 @@
 
 				<% unless current_page?(root_path) %>
 				  <%= link_to "Home", root_path %>
+				  <!-- goes ehre -->
+				  <div id="tag-container">
+				  	<p>CSS: <%= @tags.find(project.id).css %> </p>
+				  	<p>HTML: <%= @tags.find(project.id).html %> </p>
+
+				  	
+				  </div>
 				<% end %>
 
 				<% if current_user.present? %>
