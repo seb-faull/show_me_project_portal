@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
     @users = User.all #Line changed
     @projects = if params[:term]
        Project.where('title LIKE ?', "%#{params[:term]}%")
-       Project.where('collabarators LIKE ?', "%#{params[:term]}%") 
+       Project.where('collabarators LIKE ?', "%#{params[:term]}%")
      else
        @projects = current_user.projects
      end
