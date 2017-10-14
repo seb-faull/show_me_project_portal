@@ -1,5 +1,6 @@
 <!-- Checks to see if a User is present and if it is, then checks to see if they're an admin and if projects are live -->
 <% if current_user.present? %>
+
 	<% if (current_user.role == "Admin") || (project.live == true) || (current_page?(projects_path)) %> <!-- will be true -->
 
 		<!-- Rendering the project and relevant buttons and links -->
@@ -21,6 +22,7 @@
 				<% end %>
 
 				<% unless current_page?(root_path) %>
+				
 				  <%= link_to "Home", root_path %>
 				  <!-- goes ehre -->
 				  <div id="tag-container">
@@ -63,8 +65,8 @@
 				<% if current_user.present? %>
 					<!-- Only show edit link to the current user's project -->
 					<% if current_user.id == project.user_id %>
-						| <%= link_to "Edit Page", edit_project_path(project) %>
-						<%= link_to "Show Page", project_path(project)%>
+						<%= link_to "Show Page", project_path(project)%> |
+						<%= link_to "Edit Page", edit_project_path(project) %>
 					<% end %>
 
 					<!--- If user is admin -->
