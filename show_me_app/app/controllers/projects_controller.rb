@@ -10,7 +10,6 @@ class ProjectsController < ApplicationController
   #Show
   def show
     @project = Project.find(params[:id])
-    
     @users = User.all #Line changed
   end
 
@@ -60,35 +59,9 @@ class ProjectsController < ApplicationController
   end
 
 
-  require 'builder'
-  require 'will_paginate'
-  include ActionView::Helpers::NumberHelper
-
-    def index
-      @filterrific = Filterrific.new(Project, params[:filterrific])
-      @filterrific.select_options = {
-        sorted_by: Project.options_for_sorted_by,
-        with_project: Project.options_for_select
-      }
-      @projects = Project.filterrific_find(@filterrific).page(params[:page]).with_projects
-
-      respond_to do |format|
-        format.html
-        format.js
-      end
-    end
-
-    def reset_filterrific
-      # Clear session persistence
-      session[:filterrific_projects] = nil
-      # Redirect back to the index action for default filter settings.
-      redirect_to action: :index
-    end
-  end
-
   protected
   def project_params
-    params.require(:project).permit(:title, :description, :live, :collabarators, :img_url)
+    params.require(:project).permit(:title, :description, :live, :collabarators, :image, :css, :html, :javascript, :ruby, :rails)
   end
 
 end
