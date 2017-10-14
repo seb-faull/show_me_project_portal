@@ -82,7 +82,7 @@ body {
 	padding: 10px;
 	margin: 10px;
 	border: 2px solid rgba(31, 31, 31, 0.4);
-    height: 820px;
+    height: 880px;
     width: 426px;
 }
 
@@ -355,12 +355,13 @@ body {
     cursor: pointer;
 }
 
+#project-text-container {
+    width: 95%;
+}
 
-
-
-
-
-
-
+#project-text-container p {
+    padding-top: 10px;
+    padding-left: 10px;
+}
 
 
