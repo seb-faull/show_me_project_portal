@@ -4,11 +4,11 @@ class ProjectsController < ApplicationController
   def index
     @users = User.all #Line changed
     @projects = if params[:term]
-       Project.where('title LIKE ?', "%#{params[:term]}%")
-       Project.where('collabarators LIKE ?', "%#{params[:term]}%")
-     else
-       @projects = current_user.projects
-     end
+        Project.where('title LIKE ?', "%#{params[:term]}%")
+        Project.where('collabarators LIKE ?', "%#{params[:term]}%")
+      else
+        @projects = current_user.projects
+      end
   end
 
   #Show
