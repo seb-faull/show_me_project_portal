@@ -8,17 +8,55 @@
 		<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
 			<div class="text">
 
-				<!-- <img src="<%=project.image.path%>" width="500px" height="300px"> -->
+				<!-- <img src="https://s3.eu-west-2.amazonaws.com/show-case<%= project.image.path %>" width="500px" height="300px"> -->
 				<%= image_tag project.image.url(:square) %>
 				<div id="project-text-container">
 					<p><strong>Title: </strong><%= project.title %></p>
-					<p><strong>Description: </strong><%= project.description %></p>
 					<a class="a-link" href="<%= project.github %>" target="_blank">Github link</a>
+					<p><strong>Description: </strong><%= project.description %></p>
 					<p><strong>Collabarators: </strong><%= project.collabarators %></p>
+
+					<div id="tag-container">
+            
+             		<p><strong>Tags:</strong></p>
+
+					
+
+				  	<%= form_for(project) do |f| %>
+					  	<ul id="tag-list">
+					  		<li class="tag-item">
+								<%= f.label "CSS" %>
+							    <%= f.check_box(:css) %>
+						    </li>
+
+						    <li class="tag-item">
+						    <%= f.label "HTML" %>
+						    <%= f.check_box(:html) %>
+						    </li>
+
+						    <li class="tag-item">
+						    <%= f.label "JavaScript" %>
+						    <%= f.check_box(:javascript) %>
+						    </li>
+
+						    <li class="tag-item">
+						    <%= f.label "Ruby" %>
+						    <%= f.check_box(:ruby) %>
+						    </li>
+
+						    <li class="tag-item">
+						    <%= f.label "Rails" %>
+						    <%= f.check_box(:rails) %>
+						    </li>
+					    </ul>
+					    <p><strong>Uploaded by: </strong><%= @users.find(project.user_id).name %></p> <!-- Finds user by project user id -->
+					<% end %>	
+
+				  </div>
 
 
 				<% if current_page?(root_path) %>
-					<%= link_to "Show Page", project_path(project), :class => "a-link" %>
+					<%= link_to "Show Page", project_path(project), :class => "a-link" %> |
 				<% end %>
 
 
@@ -28,11 +66,11 @@
 				  <!-- goes ehre -->
 				  <div id="tag-container">
             
-             <p><strong>Tags:</strong></p>
+             		<p><strong>Tags:</strong></p>
 
-				  <p>Description: <strong><%= project.description %></strong></p>
-				  <p>Collabarators: <strong><%= project.collabarators %></strong></p>
-				  <p><strong><%= @users.find(project.user_id).name %></strong></p> <!-- Finds user by project user id -->
+					<p>Description: <strong><%= project.description %></strong></p>
+					<p>Collabarators: <strong><%= project.collabarators %></strong></p>
+					<p><strong><%= @users.find(project.user_id).name %></strong></p> <!-- Finds user by project user id -->
 
 				  	<%= form_for(project) do |f| %>
 					  	<ul id="tag-list">
@@ -72,7 +110,7 @@
 						<!-- Only show edit link to the current user's project -->
 						<% if current_user.id == project.user_id %>
 							
-							<%= link_to "Edit Page", edit_project_path(project) %>
+							<%= link_to "Edit Page", edit_project_path(project), :class => "a-link" %>
 						<% end %>
 
 						<!--- If user is admin -->
@@ -94,19 +132,14 @@
 
 <!-- If any User is NOT signed in and if projects are live then render all projects -->
 <% elsif !current_user.present? && (project.live == true) %>
-	<div class="grid">
+	<div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
 		<div class="text">
-			<!-- <img src="<%=project.image.path%>" width="500px" height="300px"> -->
+			<!-- <img src="https://s3.eu-west-2.amazonaws.com/show-case<%= project.image.path %>" width="500px" height="300px"> -->
 			<%= image_tag project.image.url(:square) %>
 			<div id="project-text-container">
-
-			<p>Title: <strong><%= project.title %></strong></p>
-			<a href="<%= project.github %>">Github link</a>
-
-
 				<p><strong>Title: </strong><%= project.title %></p>
-				<p><strong>Description: </strong><%= project.description %></p>
 				<a class="a-link" href="<%= project.github %>" target="_blank">Github link</a>
+				<p><strong>Description: </strong><%= project.description %></p>
 				<p><strong>Collabarators: </strong><%= project.collabarators %></p>
 
 				 <div id="tag-container">
@@ -153,8 +186,8 @@
 
 			<% unless current_page?(root_path) %>
 			  <%= link_to "Home", root_path %>
-			  <p>Description: <strong><%= project.description %></strong></p>
-			  <p>Collabarators: <strong><%= project.collabarators %></strong></p></p>
+			  <p><strong>Description: </strong><%= project.description %></p>
+			  <p><strong>Collabarators: </strong><%= project.collabarators %></p>
 			  <p><strong><%= @users.find(project.user_id).name %></strong></p> <!-- Finds user by project user id -->
 			<% end %>
 
