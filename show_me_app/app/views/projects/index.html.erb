@@ -8,9 +8,9 @@
 
 <!-- If User is not signed in don't show these links -->
 <% if current_user.present? %>
-		<%= link_to "New Project", new_project_path %> |
-		<%= link_to "My Projects", projects_path %> |
-		<%= link_to "Home", '/' %>
+	<%= link_to "Home", '/' %> |
+	<%= link_to "New Project", new_project_path %> |
+	<%= link_to "My Projects", projects_path %>
 <% end %>
 <br>
 
