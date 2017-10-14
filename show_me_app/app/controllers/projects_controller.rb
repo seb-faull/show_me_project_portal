@@ -2,9 +2,12 @@ class ProjectsController < ApplicationController
 
   #Index
   def index
-    @projects = current_user.projects
-
     @users = User.all #Line changed
+    @projects = if params[:term]
+        Project.where('title LIKE ?', "%#{params[:term]}%")
+      else
+        @projects = current_user.projects
+      end
   end
 
   #Show
