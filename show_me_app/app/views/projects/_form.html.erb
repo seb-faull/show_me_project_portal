@@ -1,52 +1,14 @@
 <!-- Form for the project resource - used for creating and updating projects-->
-<%= form_for(@project, multipart: true) do |f| %>
+<%= form_for(@project) do |f| %>
 
-	  <%= f.label :title %>
-	  <%= f.text_field :title %>
+	<%= f.label :title %>
+  <%= f.text_field :title %>
 
-	  <%= f.label :description %>
-	  <%= f.text_area :description, :id => "resize-texfield" %>
+  <%= f.label :description %>
+  <%= f.text_area :description, :id => "resize-texfield" %>
 
-	  <%= f.label :collabarators %>
-	  <%= f.text_field :collabarators %>
+  <%= f.label :collabarators %>
+  <%= f.text_field :collabarators %>
 
-	  <%= f.label :github %>
-	  <%= f.text_field :github %>
-
-	  <div class="field">
-	    <%= f.label :image %>
-	    <%= f.file_field :image %>
-	  </div>
-
-	  <ul id="tag-list">
-
-	  		<li class="tag-item">
-			<%= f.label "CSS" %>
-		    <%= f.check_box(:css) %>
-		    </li>
-
-		    <li class="tag-item">
-		    <%= f.label "HTML" %>
-		    <%= f.check_box(:html) %>
-		    </li>
-
-		    <li class="tag-item">
-		    <%= f.label "JavaScript" %>
-		    <%= f.check_box(:javascript) %>
-		    </li>
-
-		    <li class="tag-item">
-		    <%= f.label "Ruby" %>
-		    <%= f.check_box(:ruby) %>
-		    </li>
-
-		    <li class="tag-item">
-		    <%= f.label "Rails" %>
-		    <%= f.check_box(:rails) %>
-		    </li>
-
-		</ul>
-
-	  <%= f.submit :id => "submit" %>
-  <% end %>
-
+  <%= f.submit :id => "submit" %>
+<% end %>
