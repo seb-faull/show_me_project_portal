@@ -1,4 +1,13 @@
 <h1>Project Show Page</h1>
+
+<%= form_tag(projects_path, method: :get) do %>
+  <%= text_field_tag :term %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+
+<% if @project.live == false %>
+	<p><strong> The project is not live, awaiting admin approval <strong></p>
+<% end %>
 <!-- Render the projects -->	
 <%= render @project%>
 <br>
