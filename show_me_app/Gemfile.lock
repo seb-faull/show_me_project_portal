@@ -225,11 +225,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   devise
-<<<<<<< HEAD
-  filterrific
-=======
   dotenv-rails
->>>>>>> b9d8ba3146fef1ebeb2edb980745ffc2db8c6ccf
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   paperclip
