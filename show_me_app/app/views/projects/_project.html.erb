@@ -19,7 +19,7 @@
 					<%= link_to "Show Page", project_path(project)%>
 				<% end %>
 
-				<% unless current_page?(root_path) %>
+				<% unless current_page?(root_path) || current_page?(projects_path)%>
 				
 				  <%= link_to "Home", root_path %>
 				  <!-- goes ehre -->
