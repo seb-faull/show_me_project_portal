@@ -11,11 +11,9 @@
 				<div id="project-text-container">
 					<p><strong>Title: </strong><%= project.title %></p>
 					<p><strong>Description: </strong><%= project.description %></p>
-					<p><strong>Collabarators: </strong><%= project.collabarators %></p>
 					<a class="a-link" href="<%= project.github %>" target="_blank">Github link</a>
+					<p><strong>Collabarators: </strong><%= project.collabarators %></p>
 
-					<p><strong><%= @users.find(project.user_id).name %></strong></p> <!-- Finds user by project user id -->
-				<br>
 				<% if current_page?(root_path) %>
 					<%= link_to "Show Page", project_path(project), :class => "a-link" %>
 				<% end %>
@@ -53,6 +51,7 @@
 						    <%= f.check_box(:rails) %>
 						    </li>
 					    </ul>
+					    <p><strong>Uploaded by: </strong><%= @users.find(project.user_id).name %></p> <!-- Finds user by project user id -->
 					<% end %>	
 
 				  </div>
@@ -84,24 +83,59 @@
 <% elsif !current_user.present? && (project.live == true) %>
 	<div class="grid">
 		<div class="text">
-			<p>Title: <strong><%= project.title %></strong></p>
-			<p>Description: <strong><%= project.description %></strong></p>
-			<p>Collabarators: <strong><%= project.collabarators %></strong></p></p>
-			<a href="<%= project.github %>">Github link</a>
+			<img src="https://s3.eu-west-2.amazonaws.com/show-case<%= project.image.path %>" width="400px" height="400px">
+			<div id="project-text-container">
 
-			<img src="https://s3.eu-west-2.amazonaws.com/show-case<%= project.image.path %>" width="100" height="100">
+				<p><strong>Title: </strong><%= project.title %></p>
+				<p><strong>Description: </strong><%= project.description %></p>
+				<a class="a-link" href="<%= project.github %>" target="_blank">Github link</a>
+				<p><strong>Collabarators: </strong><%= project.collabarators %></p>
 
+				 <div id="tag-container">
 
-			<p>User: <strong><%= @users.find(project.user_id).name %></strong></p> <!-- Finds user by project user id -->
+				  <p><strong>Tags:</strong></p>
 
-			<br>
-			<% if current_page?(root_path) %>
-				<%= link_to "Show Page", project_path(project), :class => "a-link" %>
-			<% end %>
+				  	<%= form_for(project) do |f| %>
+					  	<ul id="tag-list">
+					  		<li class="tag-item">
+								<%= f.label "CSS" %>
+							    <%= f.check_box(:css) %>
+						    </li>
 
-			<% unless current_page?(root_path) %>
-			  <%= link_to "Home", root_path, :class => "a-link" %>
-			<% end %>
+						    <li class="tag-item">
+						    <%= f.label "HTML" %>
+						    <%= f.check_box(:html) %>
+						    </li>
+
+						    <li class="tag-item">
+						    <%= f.label "JavaScript" %>
+						    <%= f.check_box(:javascript) %>
+						    </li>
+
+						    <li class="tag-item">
+						    <%= f.label "Ruby" %>
+						    <%= f.check_box(:ruby) %>
+						    </li>
+
+						    <li class="tag-item">
+						    <%= f.label "Rails" %>
+						    <%= f.check_box(:rails) %>
+						    </li>
+					    </ul>
+					    <p><strong>Uploaded by: </strong><%= @users.find(project.user_id).name %></p> <!-- Finds user by project user id -->
+					<% end %>	
+
+				  </div>
+
+				<br>
+				<% if current_page?(root_path) %>
+					<%= link_to "Show Page", project_path(project), :class => "a-link" %>
+				<% end %>
+
+				<% unless current_page?(root_path) %>
+				  <%= link_to "Home", root_path, :class => "a-link" %>
+				<% end %>
+			</div>
 		</div>
 	</div>
 <% end %>
