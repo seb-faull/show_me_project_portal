@@ -5,7 +5,9 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-   config.paperclip_defaults = {
+
+  
+  config.paperclip_defaults = {
   storage: :s3,
   s3_credentials: {
     bucket: ENV.fetch('S3_BUCKET_NAME'),
