@@ -12,19 +12,19 @@
 					<p><strong>Title: </strong><%= project.title %></p>
 					<p><strong>Description: </strong><%= project.description %></p>
 					<p><strong>Collabarators: </strong><%= project.collabarators %></p>
-					<a href="<%= project.github %>" target="_blank">Github link</a>
+					<a class="a-link" href="<%= project.github %>" target="_blank">Github link</a>
 
 					<p><strong><%= @users.find(project.user_id).name %></strong></p> <!-- Finds user by project user id -->
 				<br>
 				<% if current_page?(root_path) %>
-					<%= link_to "Show Page", project_path(project)%>
+					<%= link_to "Show Page", project_path(project), :class => "a-link" %>
 				<% end %>
 
 				<% unless current_page?(root_path) %>
-				
-				  <%= link_to "Home", root_path %>
 				  <!-- goes ehre -->
 				  <div id="tag-container">
+
+				  <p><strong>Tags:</strong></p>
 
 				  	<%= form_for(project) do |f| %>
 					  	<ul id="tag-list">
@@ -61,7 +61,7 @@
 					<% if current_user.present? %>
 						<!-- Only show edit link to the current user's project -->
 						<% if current_user.id == project.user_id %>
-							<%= link_to "Show Page", project_path(project)%> |
+							<%= link_to "Show Page", project_path(project), :class => "a-link"%> |
 							<%= link_to "Edit Page", edit_project_path(project) %>
 						<% end %>
 
@@ -96,11 +96,11 @@
 
 			<br>
 			<% if current_page?(root_path) %>
-				<%= link_to "Show Page", project_path(project)%>
+				<%= link_to "Show Page", project_path(project), :class => "a-link" %>
 			<% end %>
 
 			<% unless current_page?(root_path) %>
-			  <%= link_to "Home", root_path %>
+			  <%= link_to "Home", root_path, :class => "a-link" %>
 			<% end %>
 		</div>
 	</div>
