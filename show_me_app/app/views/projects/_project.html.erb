@@ -64,8 +64,8 @@
 				<% if current_user.present? %>
 					<!-- Only show edit link to the current user's project -->
 					<% if current_user.id == project.user_id %>
-						| <%= link_to "Edit Page", edit_project_path(project) %>
-						<%= link_to "Show Page", project_path(project)%>
+						<%= link_to "Show Page", project_path(project)%> |
+						<%= link_to "Edit Page", edit_project_path(project) %>
 					<% end %>
 
 					<!--- If user is admin -->
