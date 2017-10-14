@@ -30,7 +30,7 @@
              <p><strong>Tags:</strong></p>
 
 				  <p>Description: <strong><%= project.description %></strong></p>
-				  <p>Collabarators: <strong><%= project.collabarators %></strong></p></p>
+				  <p>Collabarators: <strong><%= project.collabarators %></strong></p>
 				  <p><strong><%= @users.find(project.user_id).name %></strong></p> <!-- Finds user by project user id -->
 
 				  	<%= form_for(project) do |f| %>
@@ -70,7 +70,7 @@
 					<% if current_user.present? %>
 						<!-- Only show edit link to the current user's project -->
 						<% if current_user.id == project.user_id %>
-							<%= link_to "Show Page", project_path(project), :class => "a-link"%> |
+							
 							<%= link_to "Edit Page", edit_project_path(project) %>
 						<% end %>
 
