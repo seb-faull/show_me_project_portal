@@ -16,8 +16,11 @@ u2 = User.create!(email: "ea@hotmail.com", password: "123456", name: "John", yea
 
 admin = User.create!(email: "admin@hotmail.com", password: "123456", name: "admin", year: "2017", role: "Admin")
 
-Project.create!(title: "Project 1", description: "Game built with HTML/CSS, JavaScript and jQuery", live: false, collabarators: "Steve, Jimmy, Bob", user_id: u1.id)
-Project.create!(title: "Project 2", description: "Web Application built with Ruby on Rails ", live: false, collabarators: "Roger, Alan", user_id: u2.id)
+Project.create!(title: "Project 1", description: "Game built with HTML/CSS, JavaScript and jQuery", live: false, 
+  collabarators: "Steve, Jimmy, Bob", user_id: u1.id, css:true, html:true, javascript:true)
+
+Project.create!(title: "Project 2", description: "Web Application built with Ruby on Rails ", live: false, 
+  collabarators: "Roger, Alan", user_id: u2.id, css:true, html:true, javascript:false, ruby:true, rails:true)
 
 puts "Finished seeding..."
 
