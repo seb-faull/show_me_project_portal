@@ -1,7 +1,7 @@
 <h1>Project Show Page</h1>
 
 <%= form_tag(projects_path, method: :get) do %>
-  <%= text_field_tag :term %>
+  <%= text_field_tag :term, nil, placeholder: "Search for title or collaborators" %>
   <%= submit_tag 'Search', name: nil %>
 <% end %>
 
