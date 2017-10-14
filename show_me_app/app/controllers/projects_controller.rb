@@ -2,17 +2,15 @@ class ProjectsController < ApplicationController
 
   #Index
   def index
+    @projects = current_user.projects
+
     @users = User.all #Line changed
-    @projects = if params[:term]
-        Project.where('title LIKE ?', "%#{params[:term]}%").or(Project.where('collabarators LIKE ?', "%#{params[:term]}%"))
-      else
-        @projects = current_user.projects
-      end
   end
 
   #Show
   def show
     @project = Project.find(params[:id])
+    
     @users = User.all #Line changed
   end
 
@@ -61,11 +59,9 @@ class ProjectsController < ApplicationController
     redirect_to projects_url
   end
 
-
   protected
   def project_params
-    params.require(:project).permit(:title, :description, :live, :collabarators, :image, :css, :html, :javascript, :ruby, :rails, :term, :github)
-
+    params.require(:project).permit(:title, :description, :live, :collabarators, :img_url)
   end
 
 end
