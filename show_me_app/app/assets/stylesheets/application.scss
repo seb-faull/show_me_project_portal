@@ -264,7 +264,7 @@ body {
     border-radius: 5px;
 }
 
-#login-block-for-project {
+.login-block-for-project {
     width: 320px;
     padding: 20px;
     background: #fff;
@@ -276,7 +276,7 @@ body {
     margin: 0 auto;
 }
 
-#login-block-for-project h2 {
+.login-block-for-project h2 {
     text-align: center;
     color: #34beef;
     font-size: 18px;
@@ -285,7 +285,7 @@ body {
     margin-bottom: 20px;
 }
 
-#login-block-for-project input {
+.login-block-for-project input {
     width: 100%;
     height: 42px;
     box-sizing: border-box;
@@ -296,29 +296,29 @@ body {
     outline: none;
 }
 
-#login-block-for-project input#email {
+.login-block-for-project input#email {
     background: #fff url(http://i.imgur.com/u0XmBmv.png) 20px top no-repeat;
     background-size: 16px 80px;
     padding: 0 20px 0 50px;
 }
 
 
-#login-block-for-project input#password {
+.login-block-for-project input#password {
     background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px top no-repeat;
     background-size: 16px 80px;
     padding: 0 20px 0 50px;
 }
 
-#login-block-for-project input#password:focus {
+.login-block-for-project input#password:focus {
     background: #fff url('http://i.imgur.com/Qf83FTt.png') 20px bottom no-repeat;
     background-size: 16px 80px;
 }
 
-#login-block-for-project input:active, #login-block-for-project input:focus {
+.login-block-for-project input:active, #login-block-for-project input:focus {
     border: 1px solid #34beef;
 }
 
-#login-block-for-project input#submit {
+.login-block-for-project input#submit {
     width: 100%;
     height: 40px;
     background: #34beef;
@@ -332,7 +332,7 @@ body {
     cursor: pointer;
 }
 
-#login-block-for-project input#submit:hover {
+.login-block-for-project input#submit:hover {
     background: #5bd4ff;
 }
 
