@@ -10,7 +10,6 @@ class ProjectsController < ApplicationController
   #Show
   def show
     @project = Project.find(params[:id])
-    
     @users = User.all #Line changed
   end
 
@@ -61,7 +60,7 @@ class ProjectsController < ApplicationController
 
   protected
   def project_params
-    params.require(:project).permit(:title, :description, :live, :collabarators, :img_url)
+    params.require(:project).permit(:title, :description, :live, :collabarators, :image, :css, :html, :javascript, :ruby, :rails)
   end
 
 end
