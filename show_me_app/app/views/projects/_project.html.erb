@@ -48,7 +48,7 @@
 				  	</div>
 
 				<% if current_page?(root_path) %>
-					<%= link_to "Show Page", project_path(project), :class => "a-link" %>
+					<%= link_to "Show Page", project_path(project), :class => "a-link" %> <br>
 				<% end %>
 
 				<!-- Always show link to Home page, but only show delete if project belongs to user or if you're admin -->
@@ -61,13 +61,14 @@
 					<% end %>
 				<% end %>
 
+				<br>
 					<% if current_user.present? %>
 						<!-- Only show edit link to the current user's project -->
 						<% if current_user.id == project.user_id %>
-							
 							<%= link_to "Edit Page", edit_project_path(project), :class => "a-link" %>
 						<% end %>
 
+						<br>
 						<!--- If user is admin -->
 						<% if current_user.role == "Admin" %>
 							<%= form_for(project) do |f| %>
@@ -128,11 +129,9 @@
 
 					  </div>
 
-					<br>
 					<% if current_page?(root_path) %>
-						<%= link_to "Show Page", project_path(project), :class => "a-link" %>
+						<%= link_to "Show Page", project_path(project), :class => "a-link" %> <br>
 					<% end %>
-
 
 				<% unless current_page?(root_path) %>
 				  <%= link_to "Home", root_path %>
