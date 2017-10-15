@@ -85,7 +85,7 @@
 	<% end %>
 <!-- If any User is NOT signed in and if projects are live then render all projects -->
 <% elsif !current_user.present? && (project.live == true) %>
-	<div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-md-offset-2 col-lg-offset-2 col-sm-offset-2">
+	<div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-md-offset-2 col-lg-offset-2 col-sm-offset-2"> <!-- Classes for bootstrap grid system and styling of the projects -->
 			<div class="text">
 				<img src="https://s3.eu-west-2.amazonaws.com/eng-2-project<%= project.image.path %>" width="500px" height="300px">
 				<div id="project-text-container">
