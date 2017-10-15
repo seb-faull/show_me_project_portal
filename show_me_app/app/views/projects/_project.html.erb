@@ -48,7 +48,7 @@
 				  	</div>
 
 				<% if current_page?(root_path) %>
-					<%= link_to "Show Page", project_path(project), :class => "a-link" %> <br>
+					<%= link_to "Show Page", project_path(project), :class => "a-link" %>
 				<% end %>
 
 				<!-- Always show link to Home page, but only show delete if project belongs to user or if you're admin -->
@@ -132,6 +132,7 @@
 					<% if current_page?(root_path) %>
 						<%= link_to "Show Page", project_path(project), :class => "a-link" %> <br>
 					<% end %>
+
 
 				<% unless current_page?(root_path) %>
 				  <%= link_to "Home", root_path %>
