@@ -20,27 +20,27 @@
 						  	<ul id="tag-list">
 						  		<li class="tag-item">
 									<%= f.label "CSS" %>
-								    <%= f.check_box(:css) %>
+								    <%= f.check_box(:css, :disabled => true) %>
 							    </li>
 
 							    <li class="tag-item">
 							    <%= f.label "HTML" %>
-							    <%= f.check_box(:html) %>
+							    <%= f.check_box(:html, :disabled => true) %>
 							    </li>
 
 							    <li class="tag-item">
 							    <%= f.label "JavaScript" %>
-							    <%= f.check_box(:javascript) %>
+							    <%= f.check_box(:javascript, :disabled => true) %>
 							    </li>
 
 							    <li class="tag-item">
 							    <%= f.label "Ruby" %>
-							    <%= f.check_box(:ruby) %>
+							    <%= f.check_box(:ruby, :disabled => true) %>
 							    </li>
 
 							    <li class="tag-item">
 							    <%= f.label "Rails" %>
-							    <%= f.check_box(:rails) %>
+							    <%= f.check_box(:rails, :disabled => true) %>
 							    </li>
 						    </ul>
 						    <p><strong>Uploaded by: </strong><%= @users.find(project.user_id).name %></p> <!-- Finds user by project user id -->
@@ -100,27 +100,27 @@
 						  	<ul id="tag-list">
 						  		<li class="tag-item">
 									<%= f.label "CSS" %>
-								    <%= f.check_box(:css) %>
+								    <%= f.check_box(:css, :disabled => true) %>
 							    </li>
 
 							    <li class="tag-item">
 							    <%= f.label "HTML" %>
-							    <%= f.check_box(:html) %>
+							    <%= f.check_box(:html, :disabled => true) %>
 							    </li>
 
 							    <li class="tag-item">
 							    <%= f.label "JavaScript" %>
-							    <%= f.check_box(:javascript) %>
+							    <%= f.check_box(:javascript, :disabled => true) %>
 							    </li>
 
 							    <li class="tag-item">
 							    <%= f.label "Ruby" %>
-							    <%= f.check_box(:ruby) %>
+							    <%= f.check_box(:ruby, :disabled => true) %>
 							    </li>
 
 							    <li class="tag-item">
 							    <%= f.label "Rails" %>
-							    <%= f.check_box(:rails) %>
+							    <%= f.check_box(:rails, :disabled => true) %>
 							    </li>
 						    </ul>
 						    <p><strong>Uploaded by: </strong><%= @users.find(project.user_id).name %></p> <!-- Finds user by project user id -->
