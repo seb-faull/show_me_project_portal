@@ -12,6 +12,7 @@
 					<a class="a-link" href="<%= project.github %>" target="_blank">Github link</a>
 					<p><strong>Description: </strong><%= project.description %></p>
 					<p><strong>Collabarators: </strong><%= project.collabarators %></p>
+					<p><strong>Year: </strong><%= project.year %></p>
 
 					<div id="tag-container">
             
@@ -92,6 +93,7 @@
 					<a class="a-link" href="<%= project.github %>" target="_blank">Github link</a>
 					<p><strong>Description: </strong><%= project.description %></p>
 					<p><strong>Collabarators: </strong><%= project.collabarators %></p>
+					<p><strong>Year: </strong><%= project.year %></p>
 
 					 <div id="tag-container">
 
@@ -138,6 +140,7 @@
 				  <%= link_to "Home", root_path %>
 				  <p><strong>Description: </strong><%= project.description %></p>
 				  <p><strong>Collabarators: </strong><%= project.collabarators %></p>
+				  <p><strong>Year: </strong><%= project.year %></p>
 				  <p><strong><%= @users.find(project.user_id).name %></strong></p> <!-- Finds user by project user id -->
 				<% end %>
 
