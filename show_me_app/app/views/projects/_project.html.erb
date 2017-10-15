@@ -126,22 +126,10 @@
 							    </li>
 						    </ul>
 						    <p><strong>Uploaded by: </strong><%= @users.find(project.user_id).name %></p> <!-- Finds user by project user id -->
-						<% end %>	
+						<% end %>
+						<%= link_to "Show Page", project_path(project), :class => "a-link" %>
 
 					  </div>
-
-					<% if current_page?(root_path) %>
-						<%= link_to "Show Page", project_path(project), :class => "a-link" %> <br>
-					<% end %>
-
-				<% unless current_page?(root_path) %>
-				  <%= link_to "Home", root_path %>
-				  <p><strong>Description: </strong><%= project.description %></p>
-				  <p><strong>Collabarators: </strong><%= project.collabarators %></p>
-				  <p><strong>Year: </strong><%= project.year %></p>
-				  <p><strong><%= @users.find(project.user_id).name %></strong></p> <!-- Finds user by project user id -->
-				<% end %>
-
 			</div>
 		</div>
 	</div>
