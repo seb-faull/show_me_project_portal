@@ -13,11 +13,16 @@
 	  <%= f.label :github %>
 	  <%= f.text_field :github %>
 
+	  <%= f.label :year %>
+	  <%= f.text_field :year %>
+
 	  <div class="field">
 	    <%= f.label :image %>
 	    <%= f.file_field :image %>
 	  </div>
 
+	  <!-- Form for tags - checkboxes -->
+	  <p><strong>Tags:</strong></p>
 	  <ul id="tag-list">
 
 	  		<li class="tag-item">
@@ -49,4 +54,3 @@
 
 	  <%= f.submit :id => "submit" %>
   <% end %>
-

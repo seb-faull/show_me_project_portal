@@ -1,3 +1,4 @@
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -16,17 +17,17 @@
 
 body {
 
-	font-family: 'Raleway', sans-serif;
-  	background-color: #FFFFFF;
-	color: #34BEEF;
-	margin-left: 20px;
-	margin-right: 20px;
-	margin-top: 150px;
-	margin-bottom: 10px;
+    font-family: 'Raleway', sans-serif;
+    background-color: #FFFFFF;
+    color: #34BEEF;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 150px;
+    margin-bottom: 10px;
 }
 
 .header-nav-bar {
-	width: 100%;
+    width: 100%;
     height: 120px;
     overflow: hidden;
     position: fixed;
@@ -62,26 +63,17 @@ body {
     font-size: 16px;
 }
 
-.watermark {
-    opacity: 0.1;
-    position: fixed;
-    right: 50%;
-    margin-right: -190px;
-    width: 380px;
-    z-index: -1;
-}
-
 .grid {
-	width: 400px;
-	display: inline-block;
-	padding: 20px;
-	margin: 20px;
+    width: 400px;
+    display: inline-block;
+    padding: 20px;
+    margin: 20px;
 }
 
 .text {
     padding: 10px;
     margin: 10px;
-    height: 755px;
+    height: 820px;
     width: 520px;
     box-shadow: 0px 11px 40px -5px #888888;
     background-color: white;
@@ -96,7 +88,7 @@ body {
     border-top: 5px solid #34beef;
     margin: 0 auto;
     box-shadow: 0px 4px 30px 5px #888888;
-    height: 585px;
+    height: 520px;
     margin: 0 auto;
 }
 
@@ -361,6 +353,7 @@ body {
 #project-text-container p {
     padding-top: 10px;
     padding-left: 10px;
+    width: 99%
 }
 
 .a-link {
@@ -368,3 +361,42 @@ body {
     padding-left: 10px;
 }
 
+.col-xl-2 {
+    height: 755px;
+    width: 520px;
+    margin-left: 41px;
+    margin-top: 20px;
+}
+
+.col-lg-2 {
+    height: 755px;
+    width: 520px; 
+    margin-left: 41px;
+    margin-top: 20px;
+}
+
+.col-md-2 {
+    height: 755px;
+    width: 520px;
+    margin-left: 41px;
+    margin-top: 20px;
+}
+
+.col-md-2 {
+    height: 755px;
+    width: 520px;
+    margin-left: 41px;
+    margin-top: 20px;
+}
+
+#project-text-container label {
+    padding-left: 10px;
+}
+
+input#term {
+    width: 310px;
+}
+
+#title {
+    text-align: center;
+}

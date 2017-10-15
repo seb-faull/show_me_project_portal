@@ -12,10 +12,10 @@
 	<%= link_to "New Project", new_project_path %> |
 	<%= link_to "My Projects", projects_path %>
 <% end %>
-<br>
 
+<br>
 <%= form_tag(projects_path, method: :get) do %>
-  <%= text_field_tag :term, nil, placeholder: "Search for title or collaborators" %>
+  <%= text_field_tag :term, nil, placeholder: "Search for title or collaborators or year created" %>
   <%= submit_tag 'Search', name: nil %>
 <% end %>
 
