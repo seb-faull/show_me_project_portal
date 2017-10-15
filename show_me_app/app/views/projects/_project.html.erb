@@ -95,42 +95,40 @@
 					<p><strong>Collabarators: </strong><%= project.collabarators %></p>
 					<p><strong>Year: </strong><%= project.year %></p>
 
+					 <!-- Tags container with checkboxes for each of the tags -->
 					 <div id="tag-container">
-
-					  <p><strong>Tags:</strong></p>
-
-					  	<%= form_for(project) do |f| %>
+							<p><strong>Tags:</strong></p>
+							<%= form_for(project) do |f| %>
 						  	<ul id="tag-list">
 						  		<li class="tag-item">
-									<%= f.label "CSS" %>
+										<%= f.label "CSS" %>
 								    <%= f.check_box(:css, :disabled => true) %>
 							    </li>
 
 							    <li class="tag-item">
-							    <%= f.label "HTML" %>
-							    <%= f.check_box(:html, :disabled => true) %>
+							    	<%= f.label "HTML" %>
+							    	<%= f.check_box(:html, :disabled => true) %>
 							    </li>
 
 							    <li class="tag-item">
-							    <%= f.label "JavaScript" %>
-							    <%= f.check_box(:javascript, :disabled => true) %>
+							    	<%= f.label "JavaScript" %>
+							    	<%= f.check_box(:javascript, :disabled => true) %>
 							    </li>
 
 							    <li class="tag-item">
-							    <%= f.label "Ruby" %>
-							    <%= f.check_box(:ruby, :disabled => true) %>
+							    	<%= f.label "Ruby" %>
+							    	<%= f.check_box(:ruby, :disabled => true) %>
 							    </li>
 
 							    <li class="tag-item">
-							    <%= f.label "Rails" %>
-							    <%= f.check_box(:rails, :disabled => true) %>
+							    	<%= f.label "Rails" %>
+							    	<%= f.check_box(:rails, :disabled => true) %>
 							    </li>
 						    </ul>
 						    <p><strong>Uploaded by: </strong><%= @users.find(project.user_id).name %></p> <!-- Finds user by project user id -->
 						<% end %>
 						<%= link_to "Show Page", project_path(project), :class => "a-link" %>
-
-					  </div>
+					</div>
 			</div>
 		</div>
 	</div>
