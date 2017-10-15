@@ -8,8 +8,8 @@
 		<div class="col-xl-2 col-lg-2 col-md-4 col-sm-6">
 			<div class="text">
 
-				<!-- <img src="https://s3.eu-west-2.amazonaws.com/show-case<%= project.image.path %>" width="500px" height="300px"> -->
-				<%= image_tag project.image.url(:square) %>
+
+				<img src="https://s3.eu-west-2.amazonaws.com/eng-2-project<%= project.image.path %>" width="500px" height="300px">
 				<div id="project-text-container">
 					<p><strong>Title: </strong><%= project.title %></p>
 					<a class="a-link" href="<%= project.github %>" target="_blank">Github link</a>
@@ -134,8 +134,7 @@
 <% elsif !current_user.present? && (project.live == true) %>
 	<div class="col-xl-2 col-lg-2 col-md-2 col-sm-6 col-md-offset-2 col-lg-offset-2 col-sm-offset-2">
 			<div class="text">
-				<!-- <img src="https://s3.eu-west-2.amazonaws.com/show-case<%= project.image.path %>" width="500px" height="300px"> -->
-				<%= image_tag project.image.url(:square) %>
+				<img src="https://s3.eu-west-2.amazonaws.com/eng-2-project<%= project.image.path %>" width="500px" height="300px">
 				<div id="project-text-container">
 					<p><strong>Title: </strong><%= project.title %></p>
 					<a class="a-link" href="<%= project.github %>" target="_blank">Github link</a>

@@ -1,4 +1,4 @@
-class ProjectsController < ApplicationController
+ class ProjectsController < ApplicationController
 
   #Index
   def index
