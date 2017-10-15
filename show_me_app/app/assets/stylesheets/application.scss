@@ -63,15 +63,6 @@ body {
     font-size: 16px;
 }
 
-.watermark {
-    opacity: 0.1;
-    position: fixed;
-    right: 50%;
-    margin-right: -190px;
-    width: 380px;
-    z-index: -1;
-}
-
 .grid {
     width: 400px;
     display: inline-block;
@@ -82,7 +73,7 @@ body {
 .text {
     padding: 10px;
     margin: 10px;
-    height: 755px;
+    height: 790px;
     width: 520px;
     box-shadow: 0px 11px 40px -5px #888888;
     background-color: white;
@@ -97,7 +88,7 @@ body {
     border-top: 5px solid #34beef;
     margin: 0 auto;
     box-shadow: 0px 4px 30px 5px #888888;
-    height: 585px;
+    height: 520px;
     margin: 0 auto;
 }
 
