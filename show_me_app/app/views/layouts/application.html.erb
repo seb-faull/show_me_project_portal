@@ -11,14 +11,11 @@
   </head>
 
   <body>
-
     <!-- Nav-Bar -->
     <div class="header-nav-bar">
       <div class="container-header">
-
         <!-- Sparta Logo embedded in Nav Bar -->
         <%= link_to(image_tag("sparta-global-logo.svg"), root_path) %>
-      
         <!-- Checks to see if user is signed in or not and dynamically changes Nav Bar options -->
         <p>
           <% if user_signed_in? %>
@@ -32,7 +29,6 @@
         </p>
       </div>
     </div>
-
     <!-- Bootstrap's notices and alerts for well and ill requests -->
     <% if notice %>
       <p class="alert alert-success"> <%= notice %> </p>

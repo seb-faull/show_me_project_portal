@@ -1,7 +1,9 @@
+<!-- In Sign Up form  this link this link takes you to the Login form -->
 <%- if controller_name != 'sessions' %>
   <%= link_to "Already have an account? Sign in here", new_session_path(resource_name) %><br />
 <% end -%>
 
+<!-- In Login form  thi slink this link takes you to the Sign Up form -->
 <div id="text-center">
 	<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
 	  <%= link_to "Don't have an account? Sign up here", new_registration_path(resource_name), :id => "sign-up-link" %><br />
