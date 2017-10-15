@@ -35,9 +35,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem "devise"
-gem 'aws-sdk', '~> 2.3' # amazon web services gem
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'aws-sdk', '~> 1.5.7' # amazon web services gem
 gem 'paperclip'
+gem 'carrierwave', '~> 1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

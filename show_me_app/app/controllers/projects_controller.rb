@@ -1,4 +1,4 @@
- class ProjectsController < ApplicationController
+class ProjectsController < ApplicationController
 
   #Index
   def index
@@ -61,9 +61,11 @@
     redirect_to projects_url
   end
 
+
   protected
   def project_params
     params.require(:project).permit(:title, :description, :live, :collabarators, :image, :css, :html, :javascript, :ruby, :rails, :term, :github, :year)
 
   end
+
 end
